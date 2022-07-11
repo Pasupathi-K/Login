@@ -1,0 +1,62 @@
+<div class="container w-50 mt-5 align-middle card">
+  <div class="card-body">
+{{#if msgs}}
+  <div id="alertnotice" onload="myfuntion()" class="alert alert-danger alert-dismissible">
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    {{msgs}}
+  </div>
+  <script>
+    const timeout = setTimeout(()=>{
+      const box=document.getElementById("alertnotice");
+      box.style.display='none';
+    },3000);
+    function myfuntion(){
+      clearTimeout(timeout);
+    }
+  </script>
+{{/if}}
+{{#if msg}}
+<div id="alertnote" onload="myfuntion()" class="alert alert-success alert-dismissible">
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    {{msg}}
+  </div>
+    <script>
+    const timeout = setTimeout(()=>{
+      const box=document.getElementById("alertnote");
+      box.style.display='none';
+    },3000);
+    function myfuntion(){
+      clearTimeout(timeout);
+    }
+  </script>
+{{/if}}
+<h1>Register</h1>
+<form method="post" autocomplete="off">
+  <div class="mb-3 mt-3">
+    <label for="username" class="form-label">Username:</label>
+    <input type="text" class="form-control" id="text" placeholder="Enter Username" name="username" required>
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label">Password:</label>
+    <input type="password" class="form-control" id="password" placeholder="Enter Password" name="password" required>
+  </div>
+  <div class="mb-3">
+    <label for="cpassword" class="form-label">Confirm Password:</label>
+    <input type="password" class="form-control" id="cpassword" placeholder="Enter Confirm Password" name="cpassword" required>
+  </div>
+    <div class="mb-3">
+    <label for="email" class="form-label">Email:</label>
+    <input type="email" class="form-control" id="email" placeholder="Enter Email" name="email" required>
+  </div>
+    <div class="mb-3">
+    <label for="sq" class="form-label">What is your father name(Security Question):</label>
+    <input type="text" class="form-control" id="sq" placeholder="Enter Answer" name="sq" required>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Confirm</button>
+  <div class="float-end">
+  <a href="/">Login</a>
+  </div>
+</form>
+</div>
+</div>

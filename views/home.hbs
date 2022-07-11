@@ -1,0 +1,35 @@
+<div class="container w-50 mt-5 align-middle card">
+  <div class="card-body">
+{{#if msg}}
+<div id="alertnote" onload="myfuntion()" class="alert alert-danger alert-dismissible">
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    {{msg}}
+  </div>
+    <script>
+    const timeout = setTimeout(()=>{
+      const box=document.getElementById("alertnote");
+      box.style.display='none';
+    },3000);
+    function myfuntion(){
+      clearTimeout(timeout);
+    }
+  </script>
+{{/if}} 
+<h1>Login</h1>
+<form method="post">
+  <div class="mb-3 mt-3">
+    <label for="username" class="form-label">Username:</label>
+    <input type="username" class="form-control" id="username" placeholder="Enter Username" name="username" required>
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label">Password:</label>
+    <input type="password" class="form-control" id="password" placeholder="Enter Password" name="password" required>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+  <div class="float-end">
+  <a href="/reguser">Register</a>
+  <a href="/forgot_password">Forget Password</a>
+  </div>
+</form>
+</div>
+</div>
